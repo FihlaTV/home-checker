@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const passport = require('passport');
 const routes = require('./server/routes');
 const config = require('./config');
 const app = express();
@@ -22,10 +23,10 @@ require('./server/models').connect(
     useMongoClient: true
   }
 );
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/homechecker', {
-//   useMongoClient: true
-// });
+//Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/homechecker', {
+  useMongoClient: true
+});
 // DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/4.x/docs/connections.html#use-mongo-client
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
@@ -48,8 +49,8 @@ const authCheckMiddleware = require('./server/middleware/auth-check');
 app.use('/api', authCheckMiddleware);
 
 // routes
-const authRoutes = require('./server/routes/auth');
-const apiRoutes = require('./server/routes/api');
+const authRoutes = require('./server/routes/api/auth');
+const apiRoutes = require('./server/routes/api/api');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 
