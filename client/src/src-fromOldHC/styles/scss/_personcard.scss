@@ -1,0 +1,13 @@
+.personCard-li {
+  list-style: none;
+}
+.personCard-div {
+  background-color: $grey;
+  border: 2px solid $subheader;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em;
+  li {
+    list-style: none;
+  }
+}

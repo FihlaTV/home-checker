@@ -1,0 +1,140 @@
+[
+  "questionsInterior": {
+    "yes_no": [
+      "Is the house greyhound proof? (i.e. no sharp edges, breakable items, books, pictures, etc. in dog's reach). If N provide details.",
+      "Does the potential adopter feel comfortable with a large dog in their home/space? If N provide details",
+      "Does the house have stairs? (Look for non-carpeted stairs, sharp edges of banister, hazards around the base and top of the stairs, etc)? If Y provide details",
+      "Does the house have large windows, sliding glass doors, mirrors?",
+      "Are cleaning products and poisons out of reach in the house and garage?",
+      "Does the house have mini-blinds?",
+      "Are there dangerous plants within greyhound reach?",
+      "Are medications out of greyhound reach?",
+      "Should baby gates be suggested and where?",
+      "Are personal items kept out of reach of greyhound?  (i.e. purses, shoes, wallets, glasses, keys, etc.)",
+      "Do they have a doggie door?"
+    ],
+    "dropdown": {
+      "home_type": {
+        "question": "What style of home will the greyhound enter?",
+        "options": [
+          "House",
+          "Townhouse or duplex--shared yard",
+          "Apartment or condo"
+        ]
+      },
+      "flooring": {
+        "question": "What type of flooring does the house have?",
+        "options": ["carpet", "tile", "linoleum"]
+      },
+      "crating": {
+        "question": "If needed, is the family willing to crate the dog",
+        "options": [
+          "Bedroom",
+          "Living area",
+          "Kitchen",
+          "Utlity room",
+          "No plans to crate"
+        ]
+      },
+      "rubbish": {
+        "question":
+          "Where is the trash kept? Is the family willing to move the trash if suggested?",
+        "options": [
+          "Kitchen and hidden",
+          "Pantry",
+          "Utility room / Garage",
+          "Exposed but secure",
+          "Needs to move and will"
+        ]
+      },
+      "other_pets": {
+        "question": "Are there other pets in the house? If so what kind?",
+        "options": [
+          "Dog(s)-small",
+          "Dog(s)-medium or large",
+          "Cat(s)",
+          "Rabbits or rodents",
+          "Bird(s)",
+          "Other"
+        ]
+      },
+      "litter_box": {
+        "question":
+          "If applicable, where is the cat food and litter box kept? Are they out of greyhound reach? Are they willing to move these items if necessary?",
+        "options": [
+          "N/A",
+          "Out of sight and secure",
+          "In sight but out of reach",
+          "In sight and in reach. Willing to move them."
+        ]
+      }
+    },
+    "brief_explanation": [
+      "Where will the greyhound stay during the day?",
+      "Where will the greyhound stay during the night?",
+      "Where will the dog be fed and watered?",
+      "Where will dog food be kept and stored?",
+      "How does the family interact with the other pet(s) and ambassador grey?",
+      "If you feel the need to elaborate on anything or add additional details about the interior, please do so."
+    ]
+  },
+
+  "questionsExterior": {
+    "yes_no": [
+      "Are there any sharp objects in the yard?",
+      "Are there any dangerous holes in the yard?",
+      "Are there any loose and rotten boards in fencing?",
+      "What about nails or holes?",
+      "Do they use fertilizers or snail baits?",
+      "Are there poisonous plants in the yard?",
+      "Are there materials stacked up against the fence that the dog could use to get out?"
+    ],
+    "drop_down": {
+      "fence_type": {
+        "question": "What type of fence is there?",
+        "options": [
+          "No fence.",
+          "Chain link",
+          "Wooden. Spaces between slats",
+          "Wooden. No spaces",
+          "Rural. No fence. Barbed wire present",
+          "Rural. Dog run or dog yard provided"
+        ]
+      },
+      "yard_access": {
+        "question":
+          "Do the gates have secure closings and latches?  If not, are they willing to padlock?  If N provide details",
+        "options": [
+          "Secure",
+          "Not secure but willing to padlock",
+          "Not secure and unwilling to change"
+        ]
+      },
+      "fence_height": {
+        "question":
+          "How tall are the fences and gates? (4-foot high at the very minimum; 5 or 6 foot preferable). If no fence or 4ft or less, provide details",
+        "options": ["< 4ft", "4ft", "5ft", "6ft", ">6ft"]
+      },
+      "water_features": {
+        "question":
+          "Do they have a pool, jacuzzi, pond, or other large water feature?",
+        "options": [
+          "Pool and no gate",
+          "Pool with safety gate",
+          "Spa or jacuzzi uncovered",
+          "Spa or jacuzzi covered",
+          "Pond with sharp edges",
+          "Pond soft earthy edges",
+          "Fountain",
+          "Communal lake or large pond",
+          "Other"
+        ]
+      }
+    },
+    "brief_explanation": [
+      "How is the condition of the lawn? Will it be a problem if the greyhound is a digger?",
+      "How is the safety of the windows from the outside?",
+      "If you feel the need to elaborate on anything or add additional details about the exterior, please do so."
+    ]
+  }
+];

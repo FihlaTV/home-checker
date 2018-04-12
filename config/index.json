@@ -1,0 +1,4 @@
+{
+  "dbUri": "mongodb://localhost/homechecker",
+  "jwtSecret": "a secret phrase!!"
+}
