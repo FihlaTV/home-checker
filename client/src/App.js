@@ -11,12 +11,11 @@ import {
   Redirect
 } from 'react-router-dom';
 
-// import Base from './components/Base.jsx';
-import HomePage from './components/HomePage.jsx';
-import LoginPage from './containers/LoginPage.jsx';
-import LogoutFunction from './containers/LogoutFunction.jsx';
-import SignUpPage from './containers/SignUpPage.jsx';
-import DashboardPage from './containers/DashboardPage.jsx';
+import HomePage from './components/HomePage';
+import LoginPage from './containers/LoginPage';
+import LogoutFunction from './containers/LogoutFunction';
+import SignUpPage from './containers/SignUpPage';
+import DashboardPage from './containers/DashboardPage';
 import Auth from './modules/Auth';
 
 // remove tap delay, essential for MaterialUI to work properly

@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Auth from '../modules/Auth';
-import LoginForm from '../components/LoginForm.jsx';
-
+import LoginForm from '../components/LoginForm';
 
 class LoginPage extends React.Component {
-
   /**
    * Class constructor.
    */
@@ -66,7 +64,7 @@ class LoginPage extends React.Component {
         Auth.authenticateUser(xhr.response.token);
 
         // update authenticated state
-        this.props.toggleAuthenticateStatus()
+        this.props.toggleAuthenticateStatus();
 
         // redirect signed in user to dashboard
         this.props.history.push('/dashboard');
@@ -114,7 +112,6 @@ class LoginPage extends React.Component {
       />
     );
   }
-
 }
 
 LoginPage.contextTypes = {
