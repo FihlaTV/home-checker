@@ -10,42 +10,36 @@ header {
 }
 h1 {
   color: $header;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2em;
   font-weight: 500;
 }
 p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
-//NAVPILLS
-.navpills {
-  margin-top: 1em;
-  width: 100%;
-}
-.navButtons {
+//LOGIN/SIGN IN AT APP
+.top-bar {
+  background-color: $green;
   display: flex;
-  justify-content: space-around;
-  @media screen and (min-width: 720px) {
-    justify-content: flex-end;
+  justify-content: flex-end;
+  a {
+    text-decoration: none;
+    color: $greywhite;
+    font-size: 1.25em;
   }
-  li {
-    color: $link;
-    width: 33.3%;
-    @media screen and (min-width: 720px) {
-      margin-left: 0.1em;
-      width: 6em;
-    }
-    div {
-      text-align: center;
-      padding: 1em;
-      @media screen and (min-width: 720px) {
-        border-radius: 1em 1em 0em 0em;
-        width: 6em;
-      }
-    }
-  }
+}
+.link-div {
+  margin: 1em 0.5em 0em 0.5em;
+}
+.link-div-holder {
+  margin: 1em 0.5em 0em 0.5em;
+  display: flex;
+}
+.link-div-twin {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 .active-tab {
   background-color: $greywhite;

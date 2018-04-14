@@ -12,7 +12,9 @@ import {
 } from 'react-router-dom';
 
 import Header from './components/Header';
-import HomePage from './components/HomePage';
+import HomeCard from './components/HomeCard';
+import About from './containers/About';
+import Contact from './containers/Contact';
 import LoginPage from './containers/LoginPage';
 import LogoutFunction from './containers/LogoutFunction';
 import SignUpPage from './containers/SignUpPage';
@@ -87,18 +89,32 @@ class App extends Component {
           <Fragment>
             <Header />
             <div className="top-bar">
-              <div className="top-bar-left">
-                <Link to="/">React App</Link>
+              <div className="link-div">
+                <Link to="/">Home</Link>
+              </div>
+              <div className="link-div">
+                <Link to="/about">About</Link>
+              </div>
+              <div className="link-div">
+                <Link to="/contact">Contact</Link>
               </div>
               {this.state.authenticated ? (
-                <div className="top-bar-right">
-                  <Link to="/dashboard">Dashboard</Link>
-                  <Link to="/logout">Log out</Link>
+                <div className="link-div-holder">
+                  <div className="link-div-twin">
+                    <Link to="/dashboard">Dashboard</Link>
+                  </div>
+                  <div className="link-div-twin">
+                    <Link to="/logout">Log out</Link>
+                  </div>
                 </div>
               ) : (
-                <div className="top-bar-right">
-                  <Link to="/login">Log in</Link>
-                  <Link to="/signup">Sign up</Link>
+                <div className="link-div-holder">
+                  <div className="link-div-twin">
+                    <Link to="/login">Sign in</Link>
+                  </div>
+                  <div className="link-div-twin">
+                    <Link to="/signup">Sign up</Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -106,9 +122,11 @@ class App extends Component {
             <PropsRoute
               exact
               path="/"
-              component={HomePage}
+              component={HomeCard}
               toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()}
             />
+            <PropsRoute exact path="/about" component={About} />
+            <PropsRoute exact path="/contact" component={Contact} />
             <PrivateRoute path="/dashboard" component={DashboardPage} />
             <LoggedOutRoute
               path="/login"

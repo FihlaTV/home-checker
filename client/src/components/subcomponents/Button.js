@@ -1,8 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Button = props => (
-  <button value={props.value}>
+  <button className={props.className} value={props.value}>
     <NavLink to={props.path}>{props.text}</NavLink>
   </button>
 );

@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import PersonForms from "./PersonForms";
-import SubHeader from "./subcomponents/SubHeader";
-import PersonCard from "./subcomponents/PersonCard";
+import PersonForms from './PersonForms';
+import SubHeader from './subcomponents/SubHeader';
+import PersonCard from './subcomponents/PersonCard';
 
 //sample names to play with:
-import personDataSample from "../samplePeople.json";
+import personDataSample from '../samplePeople.json';
 /**
  * todo:
  * bring the person state up here
@@ -14,23 +14,13 @@ import personDataSample from "../samplePeople.json";
 class Admindash extends Component {
   constructor(props) {
     super(props);
-    this.showDashboard = this.showDashboard.bind(this);
-    this.hideDashboard = this.hideDashboard.bind(this);
     this.loadAllPersons = this.loadAllPersons.bind(this);
     this.addPerson = this.addPerson.bind(this);
     this.state = {
-      loggedIn: true,
       persons: []
     };
   }
 
-  //show buttons for admin IFF logged in and not if not
-  showDashboard() {
-    this.setState({ loggedIn: true });
-  }
-  hideDashboard() {
-    this.setState({ loggedIn: false });
-  }
   //change state with dummy names
   loadAllPersons = () => {
     const newPersonsArr = [...personDataSample];
@@ -57,7 +47,7 @@ class Admindash extends Component {
   };
 
   render() {
-    const dashboard = (
+    return (
       <Fragment>
         <SubHeader tagline="Administrator Dashboard" />
         <div className="personForms">
@@ -80,15 +70,6 @@ class Admindash extends Component {
         </div>
       </Fragment>
     );
-    const noDashboard = (
-      <Fragment>
-        <h1>Admin Dashboard</h1>
-        <div>
-          <p>You need to be logged in to view the administrator dashboard.</p>
-        </div>
-      </Fragment>
-    );
-    return this.state.loggedIn ? dashboard : noDashboard;
   }
 }
 

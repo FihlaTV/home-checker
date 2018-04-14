@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Button from './subcomponents/Button';
+import Admindash from './Admindash';
 
 const Dashboard = ({ secretData, user }) => (
-  <Card className="container">
+  <Card className="dashboard-container">
     <CardTitle
-      title="Dashboard"
-      subtitle="You should get access to this page only after authentication."
+      title="Main Dashboard"
+      subtitle="Are you here as an administrator or home checker?"
     />
-  {secretData && <CardText style={{ fontSize: '16px', color: 'green' }}>Welcome <strong>{user.name}</strong>!<br />{secretData}</CardText>}
+    {secretData && (
+      <CardText style={{ fontSize: '16px', color: 'green' }}>
+        Welcome <strong>{user.name}</strong>!<br />
+        {secretData}
+      </CardText>
+    )}
+
+    <Router>
+      <Fragment>
+        <Route exact path="/admindash" component={Admindash} />
+        <div className="dash-btn">
+          <Button className="dashBtn" path="admindash" text="Administrator" />
+          <Button className="dashBtn" path="checkerdash" text="Home Checker" />
+        </div>
+      </Fragment>
+    </Router>
   </Card>
 );
 

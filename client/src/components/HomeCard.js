@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 import Auth from '../modules/Auth';
 
-class HomePage extends React.Component {
+class HomeCard extends Component {
   componentDidMount() {
     // update authenticated state on logout
     this.props.toggleAuthenticateStatus();
@@ -12,15 +12,19 @@ class HomePage extends React.Component {
     return (
       <Card className="container">
         <CardTitle
-          title="React Application"
-          subtitle="This is the home page."
+          title="Welcome to HomeChecker"
+          style={{ 'text-align': 'center' }}
         />
         {Auth.isUserAuthenticated() ? (
-          <CardText style={{ fontSize: '16px', color: 'green' }}>
+          <CardText
+            style={{ fontSize: '16px', color: 'green', 'text-align': 'center' }}
+          >
             Welcome! You are logged in.
           </CardText>
         ) : (
-          <CardText style={{ fontSize: '16px', color: 'green' }}>
+          <CardText
+            style={{ fontSize: '16px', color: 'red', 'text-align': 'center' }}
+          >
             You are not logged in.
           </CardText>
         )}
@@ -29,4 +33,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default HomeCard;
