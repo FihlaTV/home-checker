@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -11,6 +11,7 @@ import {
   Redirect
 } from 'react-router-dom';
 
+import Header from './components/Header';
 import HomePage from './components/HomePage';
 import LoginPage from './containers/LoginPage';
 import LogoutFunction from './containers/LogoutFunction';
@@ -83,7 +84,8 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <Router>
-          <div>
+          <Fragment>
+            <Header />
             <div className="top-bar">
               <div className="top-bar-left">
                 <Link to="/">React App</Link>
@@ -115,7 +117,7 @@ class App extends Component {
             />
             <LoggedOutRoute path="/signup" component={SignUpPage} />
             <Route path="/logout" component={LogoutFunction} />
-          </div>
+          </Fragment>
         </Router>
       </MuiThemeProvider>
     );
