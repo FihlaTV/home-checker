@@ -25,7 +25,6 @@ class Admindash extends Component {
   loadAllPersons = () => {
     const newPersonsArr = [...personDataSample];
     this.setState({ persons: newPersonsArr });
-    console.log(newPersonsArr);
   };
   addPerson = pers => {
     const newPersonsArr = [...personDataSample];

@@ -1,41 +1,14 @@
 const router = require('express').Router();
 const persController = require('../../controllers/persController');
 
-// Matches with "/api/books"
-// router
-//   .route('/')
-//   .get(booksController.findAll)
-//   .post(booksController.create);
-
-// // Matches with "/api/books/:id"
-// router
-//   .route('/:id')
-//   .get(booksController.findById)
-//   .put(booksController.update)
-//   .delete(booksController.remove);
-// PERSON
-// app.get('/api/person', persController.findAll);
-// app.get('/api/person', persController.findById);
-router
-  .route('/api/person')
-  .get(persController.findAll)
-  .post(persController.create);
-
-router
-  .route('/api/person/:id')
-  .get(persController.findById)
-  .put(persController.update)
-  .delete(persController.remove);
-
-router
-  .route('/api/person')
-  .get(persController.findAll)
-  .post(persController.create);
-
-router
-  .route('/api/person/:id')
-  .get(persController.findById)
-  .put(persController.update)
-  .delete(persController.remove);
+//CREATE
+router.route('/api/person').post(persController.create);
+//READ
+router.route('/api/person').get(persController.findAll);
+router.route('/api/person/:id').get(persController.findById);
+//UPDATE
+router.route('/api/person/:id').put(persController.update);
+//DELETE
+router.route('/api/person/:id').delete(persController.remove);
 
 module.exports = router;

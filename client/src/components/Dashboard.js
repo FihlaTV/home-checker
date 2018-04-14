@@ -20,11 +20,11 @@ const Dashboard = ({ secretData, user }) => (
 
     <Router>
       <Fragment>
-        <Route exact path="/admindash" component={Admindash} />
         <div className="dash-btn">
-          <Button className="dashBtn" path="admindash" text="Administrator" />
-          <Button className="dashBtn" path="checkerdash" text="Home Checker" />
+          <Button className="dashBtn" path="/admindash" text="Administrator" />
+          <Button className="dashBtn" path="/checkerdash" text="Home Checker" />
         </div>
+        <Route exact path="/admindash" component={Admindash} />
       </Fragment>
     </Router>
   </Card>

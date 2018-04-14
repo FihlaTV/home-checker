@@ -13,17 +13,17 @@ class HomeCard extends Component {
       <Card className="container">
         <CardTitle
           title="Welcome to HomeChecker"
-          style={{ 'text-align': 'center' }}
+          style={{ textAlign: 'center' }}
         />
         {Auth.isUserAuthenticated() ? (
           <CardText
-            style={{ fontSize: '16px', color: 'green', 'text-align': 'center' }}
+            style={{ fontSize: '16px', color: 'green', textAlign: 'center' }}
           >
             Welcome! You are logged in.
           </CardText>
         ) : (
           <CardText
-            style={{ fontSize: '16px', color: 'red', 'text-align': 'center' }}
+            style={{ fontSize: '16px', color: 'red', textAlign: 'center' }}
           >
             You are not logged in.
           </CardText>
