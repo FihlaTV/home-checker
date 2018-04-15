@@ -1,6 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import VistationForm from './VisitationForm';
+import VisitatonForm from './VisitationForm';
 
 class PersonCard extends Component {
+  constructor(props) {
+    super(props);
+    this.visitForm = this.visitForm.bind(this);
+  }
+  visitForm = id => {
+    console.log(`id is ${id}`);
+  };
   render() {
     const {
       firstName,
@@ -28,18 +38,27 @@ class PersonCard extends Component {
               {city}, {stateProvence} {postalCode}
             </li>
             <li>
-              email:{" "}
+              email:{' '}
               <a
-                href={"mailto:" + email + "?Subject=Home%20Check"}
+                href={'mailto:' + email + '?Subject=Home%20Check'}
                 target="_top"
               >
                 {email}
               </a>
             </li>
             <li>
-              Mobile: <a href={"tel:+1-" + mobile}>{mobile}</a>
+              Mobile: <a href={'tel:+1-' + mobile}>{mobile}</a>
             </li>
           </ul>
+          <Router>
+            <Fragment>
+              <Link to={`/applicants/${this.props.id}`}>
+                <button id={this.props.id}>
+                  Visit {firstName} {lastName}
+                </button>
+              </Link>
+            </Fragment>
+          </Router>
         </div>
       </li>
     );

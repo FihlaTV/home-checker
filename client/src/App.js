@@ -128,6 +128,7 @@ class App extends Component {
             <PropsRoute exact path="/about" component={About} />
             <PropsRoute exact path="/contact" component={Contact} />
             <PrivateRoute path="/dashboard" component={DashboardPage} />
+
             <LoggedOutRoute
               path="/login"
               component={LoginPage}

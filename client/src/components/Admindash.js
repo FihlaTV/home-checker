@@ -61,7 +61,7 @@ class Admindash extends Component {
             {Object.keys(this.state.persons).map(key => (
               <PersonCard
                 key={key}
-                idx={key}
+                id={key}
                 details={this.state.persons[key]}
               />
             ))}
