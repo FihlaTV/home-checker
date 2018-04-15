@@ -51,8 +51,10 @@ app.use('/api', authCheckMiddleware);
 // routes
 const authRoutes = require('./server/routes/api/auth');
 const apiRoutes = require('./server/routes/api/api');
+const personRoutes = require('./server/routes/api/persons');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
+app.use('/api/persons', personRoutes);
 
 // Start the API server on 3001
 app.listen(PORT, function() {

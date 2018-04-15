@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-// import axios from "axios";
 import API from '../../utils/API';
 
 class AddForm extends Component {
@@ -20,22 +19,22 @@ class AddForm extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
   //make a new person from form.
-  makePerson = () => {
-    const pers = {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      address: this.state.address,
-      city: this.state.city,
-      stateProvence: this.state.stateProvence,
-      postalCode: this.state.postalCode,
-      email: this.state.email,
-      mobile: this.state.mobile,
-      role: this.state.role
-    };
-    //setState here with new pers:
-    this.props.addPerson(pers);
-    this.resetForm();
-  }; //end makePerson
+  // makePerson = () => {
+  //   const pers = {
+  //     firstName: this.state.firstName,
+  //     lastName: this.state.lastName,
+  //     address: this.state.address,
+  //     city: this.state.city,
+  //     stateProvence: this.state.stateProvence,
+  //     postalCode: this.state.postalCode,
+  //     email: this.state.email,
+  //     mobile: this.state.mobile,
+  //     role: this.state.role
+  //   };
+  //   //setState here with new pers:
+  //   this.props.addPerson(pers);
+  //   this.resetForm();
+  // }; //end makePerson
   handleInputChange = e => {
     const { name, value } = e.target;
     this.setState({
@@ -45,7 +44,6 @@ class AddForm extends Component {
 
   handleFormSubmit = e => {
     e.preventDefault();
-    this.makePerson();
     API.savePerson({
       firstName: this.state.firstName,
       lastName: this.state.lastName,

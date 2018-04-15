@@ -57,6 +57,9 @@ class PersonCard extends Component {
                   Visit {firstName} {lastName}
                 </button>
               </Link>
+              <button id={this.props.id}>
+                Delete {firstName} {lastName}
+              </button>
             </Fragment>
           </Router>
         </div>

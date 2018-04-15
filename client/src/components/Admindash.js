@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-
+import API from '../utils/API';
 import PersonForms from './PersonForms';
 import SubHeader from './subcomponents/SubHeader';
 import PersonCard from './subcomponents/PersonCard';
@@ -15,35 +15,22 @@ class Admindash extends Component {
   constructor(props) {
     super(props);
     this.loadAllPersons = this.loadAllPersons.bind(this);
-    this.addPerson = this.addPerson.bind(this);
+    // this.addPerson = this.addPerson.bind(this);
     this.state = {
       persons: []
     };
   }
 
-  //change state with dummy names
   loadAllPersons = () => {
-    const newPersonsArr = [...personDataSample];
-    this.setState({ persons: newPersonsArr });
+    API.getPersons()
+      .then(res => this.setState({ persons: res.data }))
+      .catch(err => console.log(err));
   };
-  addPerson = pers => {
-    const newPersonsArr = [...personDataSample];
-    newPersonsArr.push(pers);
-    this.setState({ persons: newPersonsArr });
-
-    //send data from form to api
-    /**
-   * handleClick = () => {
-    axios
-      .get("https://api.github.com/users/ihatetoast")
-      .then(response => this.setState({ persons: response.body }));
-  };
-   */
-    // saveFormData = () => {
-    //   axios.get("http://localhost:8080/api/regperson")
-    //   .then(response => this.setState({});
-    // }; //end saveFormData
-  };
+  // addPerson = pers => {
+  //   const newPersonsArr = [...personDataSample];
+  //   newPersonsArr.push(pers);
+  //   this.setState({ persons: newPersonsArr });
+  // };
 
   render() {
     return (

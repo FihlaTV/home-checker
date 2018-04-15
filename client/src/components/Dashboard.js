@@ -8,8 +8,8 @@ import Admindash from './Admindash';
 const Dashboard = ({ secretData, user }) => (
   <Card className="dashboard-container">
     <CardTitle
-      title="Main Dashboard"
-      subtitle="Are you here as an administrator or home checker?"
+      title="Development Dashboard"
+      subtitle="Dev Notes: Are you here as an administrator or home checker?"
     />
     {secretData && (
       <CardText style={{ fontSize: '16px', color: 'green' }}>

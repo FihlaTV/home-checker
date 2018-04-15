@@ -2,13 +2,13 @@ const router = require('express').Router();
 const persController = require('../../controllers/persController');
 
 //CREATE
-router.route('/api/person').post(persController.create);
+router.route('/').post(persController.create);
 //READ
-router.route('/api/person').get(persController.findAll);
-router.route('/api/person/:id').get(persController.findById);
+router.route('/').get(persController.findAll);
+router.route('/:id').get(persController.findById);
 //UPDATE
-router.route('/api/person/:id').put(persController.update);
+router.route('/:id').put(persController.update);
 //DELETE
-router.route('/api/person/:id').delete(persController.remove);
+router.route('/:id').delete(persController.remove);
 
 module.exports = router;
