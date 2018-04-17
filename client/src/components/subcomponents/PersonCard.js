@@ -4,13 +4,6 @@ import { urlEscape } from '../../helpers';
 import { Link } from 'react-router-dom';
 
 class PersonCard extends Component {
-  constructor(props) {
-    super(props);
-    this.visitForm = this.visitForm.bind(this);
-  }
-  visitForm = id => {
-    console.log(`id is ${id}`);
-  };
   render() {
     const {
       firstName,

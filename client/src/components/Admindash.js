@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import API from '../utils/API';
 import PersonForms from './PersonForms';
 import SubHeader from './subcomponents/SubHeader';
@@ -64,12 +64,6 @@ class Admindash extends Component {
                     details={this.state.persons[key]}
                   />
 
-                  <Link to={`/applicants/${this.props.id}`}>
-                    <button id={key}>
-                      Visit {this.state.persons.firstName}{' '}
-                      {this.state.persons.lastName}
-                    </button>
-                  </Link>
                   <button id={key}>
                     Clear {this.state.persons.firstName}{' '}
                     {this.state.persons.lastName}

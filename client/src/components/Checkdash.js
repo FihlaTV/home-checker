@@ -11,12 +11,18 @@ class Checkdash extends Component {
     super(props);
 
     this.loadApplicants = this.loadApplicants.bind(this);
+    this.getOneApplicant = this.getOneApplicant.bind(this);
     this.state = {
       persons: []
     };
   }
   loadApplicants = () => {
     API.getApplicants()
+      .then(res => this.setState({ persons: res.data }))
+      .catch(err => console.log(err));
+  };
+  getOneApplicant = id => {
+    API.getPerson(id)
       .then(res => this.setState({ persons: res.data }))
       .catch(err => console.log(err));
   };
@@ -32,6 +38,7 @@ class Checkdash extends Component {
               <PersonCard
                 key={key}
                 id={key}
+                _id={this.state.persons._id}
                 details={this.state.persons[key]}
               />
             ))}

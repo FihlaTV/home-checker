@@ -28,7 +28,7 @@ const Dashboard = ({ secretData, user }) => (
         </div>
         <Route exact path="/admindash" component={Admindash} />
         <Route exact path="/checkdash" component={Checkdash} />
-        <Route exact path="/visit" component={VisitationForm} />
+        <Route path="/visit" component={VisitationForm} />
       </Fragment>
     </Router>
   </Card>
