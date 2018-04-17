@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-class VisitatonForm extends Component {
+class VisitationForm extends Component {
   constructor(props) {
     super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -32,7 +32,7 @@ class VisitatonForm extends Component {
   }
 }
 
-export default VisitatonForm;
+export default VisitationForm;
 
 {
   /* <fieldset>

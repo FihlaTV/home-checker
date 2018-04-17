@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import API from '../utils/API';
 import PersonForms from './PersonForms';
 import SubHeader from './subcomponents/SubHeader';
 import PersonCard from './subcomponents/PersonCard';
 
 //sample names to play with:
-import personDataSample from '../samplePeople.json';
+// import personDataSample from '../samplePeople.json';
 /**
  * todo:
  * bring the person state up here
@@ -15,7 +16,8 @@ class Admindash extends Component {
   constructor(props) {
     super(props);
     this.loadAllPersons = this.loadAllPersons.bind(this);
-    // this.addPerson = this.addPerson.bind(this);
+    this.loadCheckers = this.loadCheckers.bind(this);
+    this.loadApplicants = this.loadApplicants.bind(this);
     this.state = {
       persons: []
     };
@@ -26,11 +28,16 @@ class Admindash extends Component {
       .then(res => this.setState({ persons: res.data }))
       .catch(err => console.log(err));
   };
-  // addPerson = pers => {
-  //   const newPersonsArr = [...personDataSample];
-  //   newPersonsArr.push(pers);
-  //   this.setState({ persons: newPersonsArr });
-  // };
+  loadCheckers = () => {
+    API.getCheckers()
+      .then(res => this.setState({ persons: res.data }))
+      .catch(err => console.log(err));
+  };
+  loadApplicants = () => {
+    API.getApplicants()
+      .then(res => this.setState({ persons: res.data }))
+      .catch(err => console.log(err));
+  };
 
   render() {
     return (
@@ -42,17 +49,35 @@ class Admindash extends Component {
             persons={this.state.persons}
             addPerson={this.addPerson}
           />
+          <button onClick={this.loadAllPersons}>Load All Names</button>
+          <button onClick={this.loadCheckers}>Load Checkers</button>
+          <button onClick={this.loadApplicants}>Load Applicants</button>
         </div>
         <div className="personList">
-          <ul>
+          <div>
             {Object.keys(this.state.persons).map(key => (
-              <PersonCard
-                key={key}
-                id={key}
-                details={this.state.persons[key]}
-              />
+              <Router>
+                <Fragment>
+                  <PersonCard
+                    key={key}
+                    id={key}
+                    details={this.state.persons[key]}
+                  />
+
+                  <Link to={`/applicants/${this.props.id}`}>
+                    <button id={key}>
+                      Visit {this.state.persons.firstName}{' '}
+                      {this.state.persons.lastName}
+                    </button>
+                  </Link>
+                  <button id={key}>
+                    Clear {this.state.persons.firstName}{' '}
+                    {this.state.persons.lastName}
+                  </button>
+                </Fragment>
+              </Router>
             ))}
-          </ul>
+          </div>
         </div>
       </Fragment>
     );

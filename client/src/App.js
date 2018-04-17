@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 // import routes from './routes.js';
 
 import {
@@ -20,6 +21,7 @@ import LogoutFunction from './containers/LogoutFunction';
 import SignUpPage from './containers/SignUpPage';
 import DashboardPage from './containers/DashboardPage';
 import Auth from './modules/Auth';
+import Admindash from './components/Admindash';
 
 // remove tap delay, essential for MaterialUI to work properly
 injectTapEventPlugin();
@@ -128,6 +130,7 @@ class App extends Component {
             <PropsRoute exact path="/about" component={About} />
             <PropsRoute exact path="/contact" component={Contact} />
             <PrivateRoute path="/dashboard" component={DashboardPage} />
+            <PrivateRoute exact path="/admindash" component={Admindash} />
 
             <LoggedOutRoute
               path="/login"
@@ -144,27 +147,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-FROM CRA
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
-
-export default App;*/

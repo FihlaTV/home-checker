@@ -5,6 +5,9 @@ const persController = require('../../controllers/persController');
 router.route('/').post(persController.create);
 //READ
 router.route('/').get(persController.findAll);
+router.route('/checkers').get(persController.getCheckers);
+router.route('/applicants').get(persController.getApplicants);
+
 router.route('/:id').get(persController.findById);
 //UPDATE
 router.route('/:id').put(persController.update);

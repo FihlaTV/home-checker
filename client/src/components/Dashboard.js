@@ -4,6 +4,8 @@ import { Card, CardTitle, CardText } from 'material-ui/Card';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Button from './subcomponents/Button';
 import Admindash from './Admindash';
+import Checkdash from './Checkdash';
+import VisitationForm from './subcomponents/VisitationForm';
 
 const Dashboard = ({ secretData, user }) => (
   <Card className="dashboard-container">
@@ -22,9 +24,11 @@ const Dashboard = ({ secretData, user }) => (
       <Fragment>
         <div className="dash-btn">
           <Button className="dashBtn" path="/admindash" text="Administrator" />
-          <Button className="dashBtn" path="/checkerdash" text="Home Checker" />
+          <Button className="dashBtn" path="/checkdash" text="Home Checker" />
         </div>
         <Route exact path="/admindash" component={Admindash} />
+        <Route exact path="/checkdash" component={Checkdash} />
+        <Route exact path="/visit" component={VisitationForm} />
       </Fragment>
     </Router>
   </Card>

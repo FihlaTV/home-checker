@@ -17,24 +17,12 @@ class AddForm extends Component {
       role: ''
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
-  //make a new person from form.
-  // makePerson = () => {
-  //   const pers = {
-  //     firstName: this.state.firstName,
-  //     lastName: this.state.lastName,
-  //     address: this.state.address,
-  //     city: this.state.city,
-  //     stateProvence: this.state.stateProvence,
-  //     postalCode: this.state.postalCode,
-  //     email: this.state.email,
-  //     mobile: this.state.mobile,
-  //     role: this.state.role
-  //   };
-  //   //setState here with new pers:
-  //   this.props.addPerson(pers);
-  //   this.resetForm();
-  // }; //end makePerson
+  // componentDidMount() {
+  //   this.props.loadAllPersons();
+  // }
+
   handleInputChange = e => {
     const { name, value } = e.target;
     this.setState({
@@ -44,18 +32,20 @@ class AddForm extends Component {
 
   handleFormSubmit = e => {
     e.preventDefault();
-    API.savePerson({
+    const pers = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       address: this.state.address,
       city: this.state.city,
-      stateProvence: this.state.stateProvence,
+      stateProvence: this.state.stateProvence || 'tx',
       postalCode: this.state.postalCode,
       email: this.state.email,
       mobile: this.state.mobile,
-      role: this.state.role
-    })
-      .then(res => this.props.loadAllPersons())
+      role: this.state.role || 'applicant'
+    };
+    console.log(pers);
+    API.savePerson(pers)
+      .then(res => this.props.loadAllPersons)
       .catch(err => console.log(err));
     this.resetForm();
   };
