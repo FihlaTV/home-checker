@@ -23,12 +23,12 @@ const Dashboard = ({ secretData, user }) => (
     <Router>
       <Fragment>
         <div className="dash-btn">
-          <Button className="dashBtn" path="/admindash" text="Administrator" />
-          <Button className="dashBtn" path="/checkdash" text="Home Checker" />
+          <Button className="dashBtn" path="/dashboard/admindash" text="Administrator" />
+          <Button className="dashBtn" path="/dashboard/checkdash" text="Home Checker" />
         </div>
-        <Route exact path="/admindash" component={Admindash} />
-        <Route exact path="/checkdash" component={Checkdash} />
-        <Route path="/visit" component={VisitationForm} />
+        <Route exact path="/dashboard/admindash" component={Admindash} />
+        <Route exact path="/dashboard/checkdash" component={Checkdash} />
+        <Route path="/dashboard/visit" component={VisitationForm} />
       </Fragment>
     </Router>
   </Card>

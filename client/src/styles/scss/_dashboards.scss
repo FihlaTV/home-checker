@@ -1,6 +1,7 @@
-.dashboard-container {
-  display: flex;
-  flex-direction: column;
+.dashboard-container{
+  display:flex;
+  flex-direction:column;
+  background-color: $greywhite;
   align-items: center;
   padding: 1em 2em;
 }

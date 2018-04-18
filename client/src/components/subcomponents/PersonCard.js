@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Card } from 'material-ui/Card';
 import { urlEscape } from '../../helpers';
 import { Link } from 'react-router-dom';
 
@@ -21,7 +20,7 @@ class PersonCard extends Component {
     let stateEscaped = urlEscape(stateProvence);
     return (
       <Fragment>
-        <Card className="personCard-li">
+        <div className="personCard-li">
           <div className="personCard-div">
             <h4 className="fullname">
               <span>{firstName}</span> <span>{lastName}</span>
@@ -63,10 +62,10 @@ class PersonCard extends Component {
               </li>
             </ul>
           </div>
-        </Card>
+        </div>
 
         <button>
-          <Link to={'/visit'}>
+          <Link to={'/dashboard/visit'}>
             HomeCheck {firstName} {lastName}
           </Link>
         </button>
