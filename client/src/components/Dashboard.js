@@ -11,7 +11,7 @@ const Dashboard = ({ secretData, user }) => (
   <Card className="dashboard-container">
     <CardTitle
       title="Development Dashboard"
-      subtitle="Dev Notes: Are you here as an administrator or home checker?"
+      subtitle="Dev Notes: Are you here as admin or checker?"
     />
     {secretData && (
       <CardText style={{ fontSize: '16px', color: 'green' }}>
@@ -23,8 +23,16 @@ const Dashboard = ({ secretData, user }) => (
     <Router>
       <Fragment>
         <div className="dash-btn">
-          <Button className="dashBtn" path="/dashboard/admindash" text="Administrator" />
-          <Button className="dashBtn" path="/dashboard/checkdash" text="Home Checker" />
+          <Button
+            className="dashBtn"
+            path="/dashboard/admindash"
+            text="Administrator"
+          />
+          <Button
+            className="dashBtn"
+            path="/dashboard/checkdash"
+            text="Home Checker"
+          />
         </div>
         <Route exact path="/dashboard/admindash" component={Admindash} />
         <Route exact path="/dashboard/checkdash" component={Checkdash} />
