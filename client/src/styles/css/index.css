@@ -1,32 +1,48 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
-button, .button {
-  background-color: #4fbc57;
-  color: #2c3e50;
-  font-size: 1em;
-  padding: 0.5em 1em;
-  font-family: 'Roboto', sans-serif; }
+.about-container {
+  padding: 1em; }
 
-a {
-  text-decoration: none; }
+.about-content {
+  background-color: #ededed;
+  padding: 1em 3em;
+  margin: 2em; }
+
+.about-text p {
+  line-height: 1.5em; }
+.about-text li {
+  line-height: 1.2em; }
+
+figure {
+  margin: 0.2em; }
+
+img {
+  width: 100%; }
 
 .buttonHolder {
   background-color: blue; }
 
 .personList {
   display: flex;
-  justify-content: center; }
+  flex-direction: column;
+  align-items: center; }
+
+.loadBtnHolder {
+  margin-top: 1em; }
+  .loadBtnHolder button {
+    border-radius: 3px; }
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif; }
 
-.dashboard-container {
+.main-dashboard-container {
   display: flex;
   flex-direction: column;
-  background-color: #97ebfe;
+  background-image: url("../../images/whitewood.jpg");
   align-items: center;
-  padding: 1em 2em; }
+  padding: 1em 2em;
+  flex: 1; }
 
 .dash-btn {
   display: flex;
@@ -39,8 +55,46 @@ body {
   font-size: 1em;
   padding: 0.5em 1em; }
 
+.homeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .homeCard h3 {
+    margin-top: 0; }
+
+.homeImg {
+  text-align: center;
+  padding: 1em;
+  width: 100%; }
+  @media screen and (min-width: 720px) {
+    .homeImg {
+      width: 80%; } }
+  @media screen and (min-width: 960px) {
+    .homeImg {
+      width: 60%; } }
+  .homeImg img {
+    width: 100%;
+    height: auto; }
+
 footer {
-  background-color: blue; }
+  align-items: center;
+  background-color: #4fbc57;
+  color: #4d4d4d;
+  display: flex;
+  justify-content: center;
+  padding: 1em 0em; }
+
+.signupin-form {
+  background-color: #ededed;
+  width: 90%;
+  margin: 1em auto;
+  text-align: center; }
+  @media screen and (min-width: 720px) {
+    .signupin-form {
+      width: 70%; } }
+  @media screen and (min-width: 920px) {
+    .signupin-form {
+      width: 50%; } }
 
 .fieldset-visit {
   border: none;
@@ -49,12 +103,26 @@ footer {
   display: flex;
   flex-direction: column;
   margin-top: 0.25em; }
-  .fieldset-visit select, .fieldset-visit textarea {
+  .fieldset-visit select,
+  .fieldset-visit textarea {
     font-size: 1em; }
+
+.addForm-fieldset {
+  display: flex; }
 
 label {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-right: 0.2em; }
+
+input {
+  margin-right: 0.2em;
+  margin-right: 0.2em;
+  font-size: 1em;
+  width: 70%; }
+
+.zipInput {
+  width: 5em; }
 
 select {
   display: inline-block;
@@ -67,19 +135,45 @@ textarea {
   font-family: monospace;
   width: 100%; }
 
+.addForm-fieldset {
+  background-color: #ededed;
+  border-radius: 2px;
+  box-shadow: 1px 2px 2px #c3c3c3;
+  margin-bottom: 0.5em;
+  padding: 0.5em; }
+
+.cityStateZip {
+  display: flex; }
+
+.addBtn {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: #4fbc57;
+  color: #ededed;
+  border: 2px solid #4d4d4d;
+  padding: 0;
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+  line-height: 0em; }
+
 header {
   background-color: #4fbc57;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding-top: 1em; }
+  @media screen and (min-width: 720px) {
+    header {
+      justify-content: flex-start;
+      padding-left: 0.5em; } }
 
 h1 {
   color: #4d4d4d;
   font-family: 'Roboto', sans-serif;
-  font-size: 2em;
-  font-weight: 500; }
+  font-size: 4em;
+  font-weight: 500;
+  margin: 0; }
 
 p {
   font-family: 'Roboto', sans-serif;
@@ -88,7 +182,10 @@ p {
 .top-bar {
   background-color: #4fbc57;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: space-around; }
+  @media screen and (min-width: 720px) {
+    .top-bar {
+      justify-content: flex-end; } }
   .top-bar a {
     text-decoration: none;
     color: #ededed;
@@ -111,16 +208,42 @@ p {
 .inactive-tab {
   background-color: #c3c3c3; }
 
-.personCard-li {
-  list-style: none; }
-
 .personCard-div {
   background-color: #97ebfe;
   border: 2px solid #1c2833;
   border-radius: 5px;
+  display: flex;
+  font-size: 1.2em;
+  justify-content: space-around;
   padding: 1em;
   margin: 1em; }
-  .personCard-div li {
-    list-style: none; }
+
+.addressBlock li {
+  list-style: none; }
+
+button,
+.button {
+  background-color: #4fbc57;
+  color: #2c3e50;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  font-family: 'Roboto', sans-serif; }
+
+a {
+  text-decoration: none;
+  color: #3f6fd8; }
+
+#root,
+.homeCard,
+.signup-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+.homeCard,
+.about-container,
+.contact-container,
+.signup-container {
+  background-image: url("../../images/whitewood.jpg"); }
 
 /*# sourceMappingURL=index.css.map */

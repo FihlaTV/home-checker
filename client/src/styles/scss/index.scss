@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
 
-
 @import '_variables';
-@import 'globals';
+@import '_mixins';
+@import '_about';
 @import '_admindash';
 @import '_body';
 @import '_dashboards';
@@ -11,3 +11,4 @@
 @import '_header';
 @import '_personcard';
 
+@import 'globals';

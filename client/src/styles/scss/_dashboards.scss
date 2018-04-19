@@ -1,10 +1,11 @@
-// Photo by rawpixel.com on Unsplash
-.dashboard-container {
+// HOME CARD AND DASHBOARDS
+.main-dashboard-container {
   display: flex;
   flex-direction: column;
-  background-color: $ltblue;
+  background-image: url('../../images/whitewood.jpg');
   align-items: center;
   padding: 1em 2em;
+  flex: 1;
 }
 .dash-btn {
   display: flex;
@@ -17,4 +18,28 @@
   color: $btnTxt;
   font-size: 1em;
   padding: 0.5em 1em;
+}
+
+.homeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    margin-top: 0;
+  }
+}
+.homeImg {
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  @media screen and (min-width: 720px) {
+    width: 80%;
+  }
+  @media screen and (min-width: 960px) {
+    width: 60%;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
 }

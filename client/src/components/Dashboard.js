@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Button from './subcomponents/Button';
 import Admindash from './Admindash';
@@ -8,16 +7,15 @@ import Checkdash from './Checkdash';
 import VisitationForm from './subcomponents/VisitationForm';
 
 const Dashboard = ({ secretData, user }) => (
-  <Card className="dashboard-container">
-    <CardTitle
-      title="Development Dashboard"
-      subtitle="Dev Notes: Are you here as admin or checker?"
-    />
+  <div className="main-dashboard-container">
+    <h3>Development Dashboard</h3>
+    <h4>Dev Notes: Are you here as admin or checker?</h4>
+
     {secretData && (
-      <CardText style={{ fontSize: '16px', color: 'green' }}>
+      <h4>
         Welcome <strong>{user.name}</strong>!<br />
         {secretData}
-      </CardText>
+      </h4>
     )}
 
     <Router>
@@ -39,7 +37,7 @@ const Dashboard = ({ secretData, user }) => (
         <Route path="/dashboard/visit" component={VisitationForm} />
       </Fragment>
     </Router>
-  </Card>
+  </div>
 );
 
 Dashboard.propTypes = {

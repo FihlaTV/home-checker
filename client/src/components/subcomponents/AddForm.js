@@ -66,7 +66,7 @@ class AddForm extends Component {
     return (
       <Fragment>
         <form className="addForm" onSubmit={this.handleFormSubmit}>
-          <fieldset>
+          <div className="addForm-fieldset">
             <label htmlFor="firstName">First Name</label>
             <input
               value={this.state.firstName}
@@ -76,8 +76,8 @@ class AddForm extends Component {
               placeholder="first name"
               onChange={this.handleInputChange}
             />
-          </fieldset>
-          <fieldset>
+          </div>
+          <div className="addForm-fieldset">
             <label htmlFor="lastName">Last Name</label>
             <input
               value={this.state.lastName}
@@ -87,8 +87,8 @@ class AddForm extends Component {
               placeholder="last name"
               onChange={this.handleInputChange}
             />
-          </fieldset>
-          <fieldset>
+          </div>
+          <div className="addForm-fieldset">
             <label htmlFor="role">Role</label>
             <select
               name="role"
@@ -99,21 +99,23 @@ class AddForm extends Component {
               <option value="checker"> HomeChecker </option>
               <option value="applicant"> Applicant </option>
             </select>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="address">Street Address</label>
+          </div>
+          <div className="addForm-fieldset">
+            <label htmlFor="address">Street</label>
             <input
+              className="streetInput"
               value={this.state.address}
               name="address"
               ref="addressRef"
               type="text"
-              placeholder="street address"
+              placeholder="street"
               onChange={this.handleInputChange}
             />
-          </fieldset>
-          <fieldset>
-            <label htmlFor="city">City or Town</label>
+          </div>
+          <div className="addForm-fieldset">
+            <label htmlFor="city">City</label>
             <input
+              className="cityInput"
               name="city"
               ref="cityRef"
               type="text"
@@ -121,8 +123,7 @@ class AddForm extends Component {
               value={this.state.city}
               onChange={this.handleInputChange}
             />
-          </fieldset>
-          <fieldset>
+
             <label htmlFor="stateProvence">State</label>
             <select
               name="stateProvence"
@@ -133,19 +134,19 @@ class AddForm extends Component {
               <option value="tx"> TX </option>
               <option value="nm"> NM </option>
             </select>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="postalCode">Zip or Postcode</label>
+
+            <label htmlFor="postalCode">Zip</label>
             <input
+              className="zipInput"
               value={this.state.postalCode}
               name="postalCode"
               ref="postalCodeRef"
               type="text"
-              placeholder="zip or postal code"
+              placeholder="zip"
               onChange={this.handleInputChange}
             />
-          </fieldset>
-          <fieldset>
+          </div>
+          <div className="addForm-fieldset">
             <label htmlFor="email">Email</label>
             <input
               value={this.state.email}
@@ -155,8 +156,8 @@ class AddForm extends Component {
               placeholder="email"
               onChange={this.handleInputChange}
             />
-          </fieldset>
-          <fieldset>
+          </div>
+          <div className="addForm-fieldset">
             <label htmlFor="mobile">Mobile</label>
             <input
               value={this.state.mobile}
@@ -166,8 +167,11 @@ class AddForm extends Component {
               placeholder="###-###-####"
               onChange={this.handleInputChange}
             />
-          </fieldset>
-          <button type="submit"> Add </button>
+          </div>
+          <button className="addBtn" type="submit">
+            {' '}
+            +{' '}
+          </button>
         </form>
       </Fragment>
     );

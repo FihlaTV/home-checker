@@ -33,16 +33,14 @@ class Checkdash extends Component {
         <SubHeader tagline="Home Checker Dashboard" />
         <button onClick={this.loadApplicants}>Load Applicants</button>
         <div className="personList">
-          <ul>
-            {Object.keys(this.state.persons).map(key => (
-              <PersonCard
-                key={key}
-                id={key}
-                _id={this.state.persons._id}
-                details={this.state.persons[key]}
-              />
-            ))}
-          </ul>
+          {Object.keys(this.state.persons).map(key => (
+            <PersonCard
+              key={key}
+              id={key}
+              _id={this.state.persons._id}
+              details={this.state.persons[key]}
+            />
+          ))}
         </div>
       </Fragment>
     );

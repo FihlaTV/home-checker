@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
+import React, { Component, Fragment } from 'react';
 import Auth from '../modules/Auth';
+import Image2 from '../images/loggedouthound.jpg';
+import Image1 from '../images/loggedinhound.jpeg';
 
 class HomeCard extends Component {
   componentDidMount() {
@@ -10,25 +11,27 @@ class HomeCard extends Component {
 
   render() {
     return (
-      <Card className="container">
-        <CardTitle
-          title="Welcome to HomeChecker"
-          style={{ textAlign: 'center' }}
-        />
+      <div className="homeCard">
+        <h1>Welcome!</h1>
         {Auth.isUserAuthenticated() ? (
-          <CardText
-            style={{ fontSize: '16px', color: 'green', textAlign: 'center' }}
-          >
-            Welcome! You are logged in.
-          </CardText>
+          <Fragment>
+            <h3>You are logged in.</h3>
+            <div className="homeImg">
+              <img
+                src={Image1}
+                alt="greyhound with green grass as background"
+              />
+            </div>
+          </Fragment>
         ) : (
-          <CardText
-            style={{ fontSize: '16px', color: 'red', textAlign: 'center' }}
-          >
-            You are not logged in.
-          </CardText>
+          <Fragment>
+            <h3>You are not logged in.</h3>
+            <div className="homeImg">
+              <img src={Image2} alt="greyhound on a couch" />
+            </div>
+          </Fragment>
         )}
-      </Card>
+      </div>
     );
   }
 }

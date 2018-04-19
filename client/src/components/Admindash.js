@@ -49,9 +49,12 @@ class Admindash extends Component {
             persons={this.state.persons}
             addPerson={this.addPerson}
           />
-          <button onClick={this.loadAllPersons}>Load All Names</button>
-          <button onClick={this.loadCheckers}>Load Checkers</button>
-          <button onClick={this.loadApplicants}>Load Applicants</button>
+          <div className="loadBtnHolder">
+            <p>View Names:</p>
+            <button onClick={this.loadAllPersons}>Load All Names</button>
+            <button onClick={this.loadCheckers}>Load Checkers</button>
+            <button onClick={this.loadApplicants}>Load Applicants</button>
+          </div>
         </div>
         <div className="personList">
           <div>

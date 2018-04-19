@@ -1,12 +1,14 @@
-.personCard-li {
-  list-style: none;
-}
 .personCard-div {
   background-color: $ltblue;
   border: 2px solid $subheader;
   border-radius: 5px;
+  display: flex;
+  font-size: 1.2em;
+  justify-content: space-around;
   padding: 1em;
   margin: 1em;
+}
+.addressBlock {
   li {
     list-style: none;
   }

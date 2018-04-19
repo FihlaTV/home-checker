@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import HomeCard from './components/HomeCard';
 import About from './containers/About';
 import Contact from './containers/Contact';
@@ -139,6 +140,7 @@ class App extends Component {
             />
             <LoggedOutRoute path="/signup" component={SignUpPage} />
             <Route path="/logout" component={LogoutFunction} />
+            <Footer />
           </Fragment>
         </Router>
       </MuiThemeProvider>

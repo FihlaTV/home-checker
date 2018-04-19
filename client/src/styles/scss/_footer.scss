@@ -1,3 +1,9 @@
 footer {
-  background-color: blue;
+  align-items: center;
+  background-color: $green;
+  color: $header;
+  display: flex;
+  justify-content: center;
+
+  padding: 1em 0em;
 }

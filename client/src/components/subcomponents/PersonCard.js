@@ -20,14 +20,16 @@ class PersonCard extends Component {
     let stateEscaped = urlEscape(stateProvence);
     return (
       <Fragment>
-        <div className="personCard-li">
-          <div className="personCard-div">
+        <div className="personCard-div">
+          <div>
             <h4 className="fullname">
               <span>{firstName}</span> <span>{lastName}</span>
             </h4>
             <p>
               role: <strong>{role}</strong>
             </p>
+          </div>
+          <div className="addressBlock">
             <ul>
               <li>{address}</li>
               <li>
@@ -36,13 +38,13 @@ class PersonCard extends Component {
               <li>
                 <a
                   href={
-                    'https://www.google.com/maps/dir/?api=1&destination' +
+                    'https://www.google.com/maps/dir/?api=1&destination=' +
                     addressEscaped +
-                    '%2c+' +
+                    '%2C+' +
                     cityEscaped +
-                    '%2c+' +
+                    '%2C+' +
                     stateEscaped +
-                    ''
+                    '&dir_action=navigate'
                   }
                 >
                   Directions via Google Maps

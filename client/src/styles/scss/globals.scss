@@ -1,4 +1,6 @@
-button, .button{
+@import '_variables';
+button,
+.button {
   background-color: $green;
   color: $btnTxt;
   font-size: 1em;
@@ -7,4 +9,19 @@ button, .button{
 }
 a {
   text-decoration: none;
+  color: $link;
+}
+
+#root,
+.homeCard,
+.signup-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.homeCard,
+.about-container,
+.contact-container,
+.signup-container {
+  background-image: url('../../images/whitewood.jpg');
 }

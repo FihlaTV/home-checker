@@ -1,0 +1,22 @@
+.about-container {
+  padding: 1em;
+}
+.about-content {
+  background-color: $greywhite;
+  padding: 1em 3em;
+  margin: 2em;
+}
+.about-text {
+  p {
+    line-height: 1.5em;
+  }
+  li {
+    line-height: 1.2em;
+  }
+}
+figure {
+  margin: 0.2em;
+}
+img {
+  width: 100%;
+}

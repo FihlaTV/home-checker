@@ -13,8 +13,8 @@ const LoginForm = ({
   user,
   toggleAuthenticateStatus
 }) => (
-  <Card className="container">
-    <form action="/" onSubmit={onSubmit}>
+  <Card className="signup-container">
+    <form className="signupin-form" action="/" onSubmit={onSubmit}>
       <h2 className="card-heading">Login</h2>
 
       {successMessage && <p className="success-message">{successMessage}</p>}
@@ -45,7 +45,9 @@ const LoginForm = ({
         <RaisedButton type="submit" label="Log in" primary />
       </div>
 
-      <CardText>Don't have an account? <Link to={'/signup'}>Create one</Link>.</CardText>
+      <CardText>
+        Don't have an account? <Link to={'/signup'}>Create one</Link>.
+      </CardText>
     </form>
   </Card>
 );
