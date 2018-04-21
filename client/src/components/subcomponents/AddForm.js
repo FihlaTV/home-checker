@@ -37,7 +37,7 @@ class AddForm extends Component {
       lastName: this.state.lastName,
       address: this.state.address,
       city: this.state.city,
-      stateProvence: this.state.stateProvence || 'tx',
+      stateProvence: this.state.stateProvence || 'TX',
       postalCode: this.state.postalCode,
       email: this.state.email,
       mobile: this.state.mobile,
@@ -55,7 +55,7 @@ class AddForm extends Component {
     ReactDOM.findDOMNode(this.refs.lastNameRef).value = '';
     ReactDOM.findDOMNode(this.refs.addressRef).value = '';
     ReactDOM.findDOMNode(this.refs.cityRef).value = '';
-    ReactDOM.findDOMNode(this.refs.stateProvenceRef).value = 'tx';
+    ReactDOM.findDOMNode(this.refs.stateProvenceRef).value = 'TX';
     ReactDOM.findDOMNode(this.refs.postalCodeRef).value = '';
     ReactDOM.findDOMNode(this.refs.emailRef).value = '';
     ReactDOM.findDOMNode(this.refs.mobileRef).value = '';
@@ -131,8 +131,8 @@ class AddForm extends Component {
               value={this.state.stateProvence}
               onChange={this.handleInputChange}
             >
-              <option value="tx"> TX </option>
-              <option value="nm"> NM </option>
+              <option value="TX"> TX </option>
+              <option value="NM"> NM </option>
             </select>
 
             <label htmlFor="postalCode">Zip</label>

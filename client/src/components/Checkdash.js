@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import API from '../utils/API';
 import SubHeader from './subcomponents/SubHeader';
 import PersonCard from './subcomponents/PersonCard';

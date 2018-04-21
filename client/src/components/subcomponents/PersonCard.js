@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { urlEscape } from '../../helpers';
-import { Link } from 'react-router-dom';
 
 class PersonCard extends Component {
   render() {
@@ -60,7 +59,10 @@ class PersonCard extends Component {
                 </a>
               </li>
               <li>
-                Mobile: <a href={'tel:+1-' + mobile}>{mobile}</a>
+                Call: <a href={'tel:+1-' + mobile}>{mobile}</a>
+              </li>
+              <li>
+                Text: <a href={'sms:+1-' + mobile}>{mobile}</a>
               </li>
             </ul>
           </div>
