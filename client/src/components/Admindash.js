@@ -5,13 +5,6 @@ import PersonForms from './PersonForms';
 import SubHeader from './subcomponents/SubHeader';
 import PersonCard from './subcomponents/PersonCard';
 
-//sample names to play with:
-// import personDataSample from '../samplePeople.json';
-/**
- * todo:
- * bring the person state up here
- */
-
 class Admindash extends Component {
   constructor(props) {
     super(props);
@@ -19,61 +12,93 @@ class Admindash extends Component {
     this.loadCheckers = this.loadCheckers.bind(this);
     this.loadApplicants = this.loadApplicants.bind(this);
     this.state = {
-      persons: []
+      persons: [],
+      checkers: [],
+      applicants: []
     };
   }
 
   loadAllPersons = () => {
     API.getPersons()
-      .then(res => this.setState({ persons: res.data }))
+      .then(res =>
+        this.setState({
+          persons: res.data
+        })
+      )
       .catch(err => console.log(err));
   };
   loadCheckers = () => {
     API.getCheckers()
-      .then(res => this.setState({ persons: res.data }))
+      .then(res =>
+        this.setState({
+          checkers: res.data
+        })
+      )
       .catch(err => console.log(err));
   };
   loadApplicants = () => {
     API.getApplicants()
-      .then(res => this.setState({ persons: res.data }))
+      .then(res =>
+        this.setState({
+          applicants: res.data
+        })
+      )
       .catch(err => console.log(err));
   };
 
   render() {
     return (
       <Fragment>
-        <SubHeader tagline="Administrator Dashboard" />
-        <div className="personForms">
-          <PersonForms
-            loadAllPersons={this.loadAllPersons}
-            persons={this.state.persons}
-            addPerson={this.addPerson}
-          />
-          <div className="loadBtnHolder">
-            <p>View Names:</p>
-            <button onClick={this.loadAllPersons}>Load All Names</button>
-            <button onClick={this.loadCheckers}>Load Checkers</button>
-            <button onClick={this.loadApplicants}>Load Applicants</button>
+        <div className="generalDashboard">
+          <SubHeader tagline="Administrator Dashboard" />
+          <div className="personForms">
+            <PersonForms
+              loadAllPersons={this.loadAllPersons}
+              persons={this.state.persons}
+              addPerson={this.addPerson}
+            />
+            <div className="loadBtnHolder">
+              <p>View Names: </p>
+              <button onClick={this.loadCheckers}> Load Checkers</button>
+              <button onClick={this.loadApplicants}> Load Applicants</button>
+            </div>
           </div>
         </div>
-        <div className="personList">
-          <div>
-            {Object.keys(this.state.persons).map(key => (
+        <div className="lists">
+          <div className="checkersList">
+            {Object.keys(this.state.checkers).map(key => (
               <Router>
-                <Fragment>
+                <div className="personCard">
                   <PersonCard
                     key={key}
                     id={key}
-                    details={this.state.persons[key]}
+                    details={this.state.checkers[key]}
                   />
-
                   <button id={key}>
-                    Clear {this.state.persons.firstName}{' '}
-                    {this.state.persons.lastName}
+                    Remove {this.state.checkers.firstName}{' '}
+                    {this.state.checkers.lastName}{' '}
                   </button>
-                </Fragment>
+                </div>
               </Router>
-            ))}
+            ))}{' '}
+          </div>
+
+          <div className="applicantsList">
+            {Object.keys(this.state.applicants).map(key => (
+              <Router>
+                <div className="personCard">
+                  <PersonCard
+                    key={key}
+                    id={key}
+                    details={this.state.applicants[key]}
+                  />
+                  <button id={key}>
+                    Remove {this.state.checkers.firstName}{' '}
+                    {this.state.checkers.lastName}{' '}
+                  </button>
+                </div>
+              </Router>
+            ))}{' '}
           </div>
         </div>
       </Fragment>

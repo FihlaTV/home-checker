@@ -20,7 +20,7 @@ class PersonCard extends Component {
     let stateEscaped = urlEscape(stateProvence);
     return (
       <Fragment>
-        <div className="personCard-div">
+        <div>
           <div>
             <h4 className="fullname">
               <span>{firstName}</span> <span>{lastName}</span>
@@ -65,12 +65,6 @@ class PersonCard extends Component {
             </ul>
           </div>
         </div>
-
-        <button>
-          <Link to={'/dashboard/visit'}>
-            HomeCheck {firstName} {lastName}
-          </Link>
-        </button>
       </Fragment>
     );
   }

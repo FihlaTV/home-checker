@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import API from '../utils/API';
 import SubHeader from './subcomponents/SubHeader';
 import PersonCard from './subcomponents/PersonCard';
@@ -13,17 +14,21 @@ class Checkdash extends Component {
     this.loadApplicants = this.loadApplicants.bind(this);
     this.getOneApplicant = this.getOneApplicant.bind(this);
     this.state = {
-      persons: []
+      applicants: []
     };
   }
   loadApplicants = () => {
     API.getApplicants()
-      .then(res => this.setState({ persons: res.data }))
+      .then(res =>
+        this.setState({
+          applicants: res.data
+        })
+      )
       .catch(err => console.log(err));
   };
   getOneApplicant = id => {
     API.getPerson(id)
-      .then(res => this.setState({ persons: res.data }))
+      .then(res => this.setState({ applicants: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -33,13 +38,25 @@ class Checkdash extends Component {
         <SubHeader tagline="Home Checker Dashboard" />
         <button onClick={this.loadApplicants}>Load Applicants</button>
         <div className="personList">
-          {Object.keys(this.state.persons).map(key => (
-            <PersonCard
-              key={key}
-              id={key}
-              _id={this.state.persons._id}
-              details={this.state.persons[key]}
-            />
+          {Object.keys(this.state.applicants).map(key => (
+            <div className="personCard">
+              <PersonCard
+                key={key}
+                id={key}
+                _id={this.state.applicants._id}
+                details={this.state.applicants[key]}
+              />
+              <button id={key}>
+                Clear {this.state.applicants.firstName}{' '}
+                {this.state.applicants.lastName}
+              </button>
+              <button id={key}>
+                <NavLink to={'/dashboard/visit'}>
+                  Visit {this.state.applicants.firstName}{' '}
+                  {this.state.applicants.lastName}{' '}
+                </NavLink>
+              </button>
+            </div>
           ))}
         </div>
       </Fragment>

@@ -18,13 +18,25 @@ figure {
 img {
   width: 100%; }
 
-.buttonHolder {
-  background-color: blue; }
+.generalDashboard {
+  background-color: rgba(237, 237, 237, 0.7);
+  width: 80%;
+  padding: 1em 2em; }
 
-.personList {
+.lists {
+  background-color: rgba(237, 237, 237, 0.7);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  width: 100%; }
+
+.personsList,
+.checkersList,
+.applicantsList {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  width: 48%; }
 
 .loadBtnHolder {
   margin-top: 1em; }
@@ -39,7 +51,8 @@ body {
 .main-dashboard-container {
   display: flex;
   flex-direction: column;
-  background-image: url("../../images/whitewood.jpg");
+  background-image: url("../../images/brick.jpg");
+  background-size: cover;
   align-items: center;
   padding: 1em 2em;
   flex: 1; }
@@ -208,11 +221,13 @@ p {
 .inactive-tab {
   background-color: #c3c3c3; }
 
-.personCard-div {
-  background-color: #97ebfe;
+.personCard {
+  background-color: rgba(151, 235, 254, 0.5);
   border: 2px solid #1c2833;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
+  width: 90%;
   font-size: 1.2em;
   justify-content: space-around;
   padding: 1em;
@@ -220,6 +235,8 @@ p {
 
 .addressBlock li {
   list-style: none; }
+  .addressBlock li a {
+    color: #0e6009; }
 
 button,
 .button {
@@ -244,6 +261,7 @@ a {
 .about-container,
 .contact-container,
 .signup-container {
-  background-image: url("../../images/whitewood.jpg"); }
+  background-image: url("../../images/brick.jpg");
+  background-size: cover; }
 
 /*# sourceMappingURL=index.css.map */

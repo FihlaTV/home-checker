@@ -30,5 +30,5 @@ CHECKER/VOLUNTEER: Checkers can click on email and mobile to communicate and on 
 
 ## Credit where credit is due:
 
-* [Photo by rawpixel.com on Unsplash](https://unsplash.com/collections/363/textures)
+* [Photo by Kupono Kuwamura on Unsplash](https://unsplash.com/photos/LzgK6IMoSZM)
 * [Passport help and guidance via Shouhei Yamauchi](https://github.com/shouheiyamauchi)

@@ -1,8 +1,10 @@
-.personCard-div {
-  background-color: $ltblue;
+.personCard {
+  background-color: $ltbluefade;
   border: 2px solid $subheader;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
+  width: 90%;
   font-size: 1.2em;
   justify-content: space-around;
   padding: 1em;
@@ -11,5 +13,8 @@
 .addressBlock {
   li {
     list-style: none;
+    a {
+      color: #0e6009;
+    }
   }
 }
