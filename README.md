@@ -1,4 +1,4 @@
-# HomeChecker
+# HomeChecker (WiP)
 
 I am building HomeChecker in hopes of tightening up one step in the adoption process for rescue greyhounds (and other groups).
 
@@ -13,6 +13,25 @@ I dislike printing out the doc and dealing with a table on Google docs. I also l
 ADMINISTRATOR: Admin will be able to add people as applicants or checkers (volunteers). Admin has full CRUD. They also can assign. I'd like them to see who is close to whom by means of a zipcode API.
 
 CHECKER/VOLUNTEER: Checkers can click on email and mobile to communicate and on a Google Maps link to navigate to the house. In terms of CRUD, the checkers have only R. They also have the form to fill out and save. Currently, it's three full pages in a Google Docs. Because the GD form gets saved as a PDF and emailed, there is no need save this informtation on a database. No one will filter applicants by fence size. It'll be printed out at the other end and saved in a folder. Checkers should be able to adjust state of the applicant so that the admin knows they've been visited.
+
+## Images
+
+HomeChecker recognizes that the user is logged in.
+![Authenticated](./readmeImgs/authLoggedin.png "You're logged in!")
+
+The administrator can enter checkers and applicants and see them in separate divs. (ToDo: allow admin to assign checker to applicant.)
+![Admin's form](./readmeImgs/adminAddForm.png 'Enter all the names!')
+
+![Admin's checkers and applicants](./readmeImgs/applicantsCheckers.png 'See all the names!')
+
+The checker can load the names of homes to visit. (ToDo: Load only those assigned to checker)
+![Checker's Dashboard](./readmeImgs/homestovisit.png 'Visit all the people!')
+
+The checker has a form to fill out when they visit.
+![Checker's form](./readmeImgs/visitationForm.png 'Check all the boxes!')
+
+Users and persons (applicants and checkers) in MongoDB:
+![MongoDB](./readmeImgs/database.png 'The bidniss badness.')
 
 ## Toolbox:
 
