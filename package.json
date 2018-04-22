@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "repository": "https://github.com/ihatetoast/home-checker",
   "scripts": {
     "server": "node server.js",
     "client": "node scripts/start-client.js",
