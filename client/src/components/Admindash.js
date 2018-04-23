@@ -71,13 +71,14 @@ class Admindash extends Component {
                 <div className="personCard">
                   <PersonCard
                     key={key}
-                    id={key}
+                    _id={this.state.checkers[key]._id}
                     details={this.state.checkers[key]}
                   />
-                  <button id={key}>
-                    Remove {this.state.checkers.firstName}{' '}
-                    {this.state.checkers.lastName}{' '}
+                  <button _id={this.state.checkers[key]._id}>
+                    Remove {this.state.checkers[key].firstName}{' '}
+                    {this.state.checkers[key].lastName}{' '}
                   </button>
+                  <button _id={this.state.checkers[key]._id}>Assign</button>
                 </div>
               </Router>
             ))}{' '}

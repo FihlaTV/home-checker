@@ -20,15 +20,17 @@ var data = [
     model: 'Person',
     documents: [
       {
-        firstName: 'Katy',
-        lastName: 'Cassidy',
+        firstName: 'Brooke',
+        lastName: 'Liddle',
         address: '4012 North Hills Drive',
         city: 'Austin',
         stateProvence: 'TX',
         postalCode: '78731',
-        email: 'brooke@queensland.com',
+        email: 'ka@queensland.com',
         mobile: '512-763-6129',
-        role: 'checker'
+        role: 'checker',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Lorelei',
@@ -39,18 +41,22 @@ var data = [
         postalCode: '75229',
         email: 'ihatetoast@normanpark.com',
         mobile: '214-357-5289',
-        role: 'checker'
+        role: 'checker',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Sharon',
-        lastName: 'Cassidy',
+        lastName: 'Manwaring',
         address: '6608 Welton Dr NE',
         city: 'Albuquerque',
         stateProvence: 'NM',
         postalCode: '87109 ',
         email: 'shazza@dibbers.com',
         mobile: '505-733-5129',
-        role: 'applicant'
+        role: 'applicant',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Fabian',
@@ -61,7 +67,9 @@ var data = [
         postalCode: '75230 ',
         email: 'fabby0@tripawd.com',
         mobile: '214-373-1232',
-        role: 'applicant'
+        role: 'applicant',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Omeau',
@@ -72,7 +80,9 @@ var data = [
         postalCode: '75001 ',
         email: 'omoOmOomo@migaloo.com',
         mobile: '972-385-9673',
-        role: 'applicant'
+        role: 'applicant',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Elvis',
@@ -83,7 +93,9 @@ var data = [
         postalCode: '87111 ',
         email: 'elvoparpar@hounddog.com',
         mobile: '505-989-4732',
-        role: 'applicant'
+        role: 'applicant',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Cecil',
@@ -94,7 +106,9 @@ var data = [
         postalCode: '78745',
         email: 'cecil@habermacher.com',
         mobile: '512-753-9283',
-        role: 'applicant'
+        role: 'applicant',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Lance',
@@ -105,7 +119,9 @@ var data = [
         postalCode: '75230',
         email: 'lanceshallots@onionfarmer.com',
         mobile: '214-373-3973',
-        role: 'applicant'
+        role: 'applicant',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Darren',
@@ -116,18 +132,22 @@ var data = [
         postalCode: '78610',
         email: 'dazzamatazza@smithfamily.com',
         mobile: '210-270-1101',
-        role: 'checker'
+        role: 'checker',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Thomas',
-        lastName: 'Vielleleuelluex',
+        lastName: 'Viellieux',
         address: '104 Irene Street',
         city: 'Elgin',
         stateProvence: 'TX',
         postalCode: '78621',
         email: 'villoodeedoo@mrtom.com',
         mobile: '512-270-1101',
-        role: 'checker'
+        role: 'checker',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Darla',
@@ -138,7 +158,9 @@ var data = [
         postalCode: '78621',
         email: 'dahlalala@brooke.com',
         mobile: '512-737-2337',
-        role: 'applicant'
+        role: 'applicant',
+        assigned: [],
+        deleted: false
       },
       {
         firstName: 'Amos',
@@ -149,7 +171,9 @@ var data = [
         postalCode: '77498',
         email: 'cookies@nomnom.com',
         mobile: '512-877-1129',
-        role: 'checker'
+        role: 'checker',
+        assigned: [],
+        deleted: false
       }
     ]
   }
